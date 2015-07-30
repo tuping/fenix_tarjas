@@ -50,7 +50,7 @@ Incluir *v* antes do número do modelo para ativar modo verbose.
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/fenix_tarjas/fork )
+1. Fork it ( https://github.com/tuping/fenix_tarjas/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
