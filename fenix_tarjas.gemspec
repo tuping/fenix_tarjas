@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = FenixTarjas::VERSION
   spec.authors       = ["Rodrigo M. Albuquerque"]
   spec.email         = ["webrodrigo@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Gera arquivo pdf com tarjas para impressão.}
+  spec.description   = %q{Gera arquivo pdf a partir de uma lista em csv.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -20,4 +20,10 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
+  spec.add_runtime_dependency "prawn", "~> 1.3.0"
+  spec.add_runtime_dependency "barby"
+  spec.add_runtime_dependency "rqrcode"
+  spec.add_runtime_dependency "progress_bar"
+  spec.add_development_dependency "warbler"
+
 end
