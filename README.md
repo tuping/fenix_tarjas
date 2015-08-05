@@ -1,4 +1,3 @@
-#encoding: utf-8
 # FenixTarjas
 
 Gera um ou mais arquivos PDF para impressão das tarjas a partir de um arquivo CSV.
