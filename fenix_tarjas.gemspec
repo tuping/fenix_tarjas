@@ -25,5 +25,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "rqrcode"
   spec.add_runtime_dependency "progress_bar"
   spec.add_development_dependency "warbler"
-
+  spec.add_development_dependency "pry"
 end
