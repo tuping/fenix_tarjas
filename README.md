@@ -48,6 +48,15 @@ Or install it yourself as:
 
 Incluir *v* antes do número do modelo para ativar modo verbose.
 
+Modelos de tarjas aceitos:
+
+    modelo 0: TCM - simples (sem endereco)
+    modelo 1: TCM - completo (com endereco)
+    modelo 2: santander - tarja menor que o TCM
+    modelo 3: bradesco comp - baseado no modelo 1 (mesmo tamanho TCM)
+    modelo 4: bancoob - tarja menor que o TCM
+
+
 ## Contributing
 
 1. Fork it ( https://github.com/tuping/fenix_tarjas/fork )
