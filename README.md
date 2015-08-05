@@ -29,17 +29,15 @@ Caso o arquivo precise ser convertido de ISO-8859-1 (Windows) para UTF-8:
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add these lines to your application's Gemfile:
 
-    gem 'fenix_tarjas'
+    source "https://rubygems.org"
+    gem "fenix_tarjas", :git => "git@github.com:tuping/fenix_tarjas.git"
+
 
 And then execute:
 
     $ bundle
-
-Or install it yourself as:
-
-    $ gem install fenix_tarjas
 
 ## Usage
 
