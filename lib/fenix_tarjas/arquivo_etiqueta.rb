@@ -53,6 +53,7 @@ class ArquivoEtiqueta
       @num_doc = 0
     end
     @verbose = options[:verbose]
+    @encoding = options[:encoding] || 'UTF-8'
   end
 
   def logotipos
@@ -101,6 +102,22 @@ class ArquivoEtiqueta
     @num_doc = @num_doc + 1
   end
 
+  def csv_col_sep
+    {:col_sep => ";"}
+  end
+
+  def csv_encoding
+    if @encoding and @encoding.upcase != "UTF-8" then
+      {:encoding => "#{@encoding}:UTF-8"}
+    else
+      {}
+    end
+  end
+
+  def csv_options
+    csv_col_sep.merge(csv_encoding)
+  end
+
   def gerar!
     new_prawn_document!
     if @verbose then
@@ -109,7 +126,7 @@ class ArquivoEtiqueta
       puts "Bottom: #{@document.bounds.bottom}"
     end
     pagina = 1
-    csv = CSV.open(@arquivo_csv, {:col_sep => ";"}).to_a[1..-1]
+    csv = CSV.open(@arquivo_csv, csv_options).to_a[1..-1]
     bar = ProgressBar.new csv.size
     csv.each_with_index do |row, i|
       if @limite_tarjas <= 0 or i < @limite_tarjas

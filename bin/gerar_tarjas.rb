@@ -1,28 +1,51 @@
 #!/usr/bin/env ruby
 #encoding: utf-8
-
-#bundle exec ruby gerar_tarjas.rb
-#  <modelo: [v]0 a [v]4> <arquivo.csv> <arquivo.pdf> <qtd_maxima_de_paginas_por_documento> <limite_de_tarjas>
-# incluir v antes do modelo para "verbose"
 require "fenix_tarjas"
 
-puts "gerar_tarjas.rb versão #{FenixTarjas::VERSION}"
+HELP = <<ENDHELP
+#{File.basename(__FILE__)}
+Opções:
 
-if ARGV[0][/(v?)(\d+)/] then
-  verbose = ($1.upcase == "V")
+    -m=<0 a 4>             modelo
+    -csv=<arquivo.csv>     arquivo csv
+    -pdf=<arquivo.pdf>     arquivo pdf
+    -qtd_max_pag=<n>       qtd maxima de paginas por documento
+    -limite=<n>            limite de tarjas
+    -encoding=<xxxx>       encoding do arquivo (se windows geralment é ISO-8859-1)
+    -verbose               incluir essa opção para modo "verbose"
+    -h, -?, -help          mostra esse help
+
+ENDHELP
+
+args = Hash[ ARGV.join(' ').scan(/--?([^=\s]+)(?:=(\S+))?/) ]
+verbose = args.include?("verbose")
+modelo = args["m"]
+arquivo_csv = args["csv"]
+arquivo_pdf = args["pdf"]
+qtd_max_paginas_por_doc = args["qtd_max_pag"]
+limite_de_tarjas = args["limite"]
+encoding = args["encoding"]
+help = args.include?("help") or args.include?("h") or args.include?("?")
+
+if modelo and arquivo_csv and arquivo_pdf and not help then
+  puts "#{File.basename(__FILE__)} versão #{FenixTarjas::VERSION}"
+
   if verbose then
-    puts "#{ARGV[1]} => #{ARGV[2]} (no máximo #{ARGV[3]} página(s) por documento)"
-    puts "Modelo: #{$2}"
-    puts "Limite: #{ARGV[4]} tarjas" if ARGV[4].to_i > 0
+    puts "#{arquivo_csv} => #{arquivo_pdf} (no máximo #{qtd_max_paginas_por_doc} página(s) por documento)"
+    puts "Modelo: #{modelo}"
+    puts "Limite: #{limite_de_tarjas} tarjas" if limite_de_tarjas.to_i > 0
   end
 
   FenixTarjas.gerar!(
     verbose,
     "#{File.dirname(__FILE__)}/../assets/logotipos", #pasta com os logotipos
-    $2, #modelo
-    ARGV[1], #arquivo csv
-    ARGV[2], #arquivo pdf
-    ARGV[3], #qtd max paginas por doc *opcional
-    ARGV[4]  #limite de tarjas *opcional
+    modelo,
+    arquivo_csv,
+    arquivo_pdf,
+    qtd_max_paginas_por_doc,
+    limite_de_tarjas,
+    encoding
   )
+else
+  puts HELP
 end

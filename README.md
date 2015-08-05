@@ -23,27 +23,37 @@ Colunas esperadas no arquivo CSV (campos com * são obrigatórios):
     Q [16] Tarja *
     R [17] Polo ** somente bradesco comp
 
-Caso o arquivo precise ser convertido de ISO-8859-1 (Windows) para UTF-8:
+Caso queira converter um arquivo de ISO-8859-1 (Windows) para UTF-8:
 
     iconv -f ISO-8859-1 -t UTF-8 arquivo.csv > arquivo_utf8.csv
 
-## Installation
+## Instalação
 
-Add these lines to your application's Gemfile:
+Adicione no Gemfile:
 
     source "https://rubygems.org"
     gem "fenix_tarjas", :git => "git@github.com:tuping/fenix_tarjas.git"
 
 
-And then execute:
+Execute:
 
     $ bundle
 
-## Usage
+## Uso
 
-    bundle exec gerar_tarjas.rb <modelo: [v]0 a [v]4> <arquivo.csv> <arquivo.pdf> <qtd_maxima_de_paginas_por_documento> <limite_de_tarjas>
+bundle exec gerar_tarjas.rb
 
-Incluir *v* antes do número do modelo para ativar modo verbose.
+Opções:
+
+    -m=<0 a 4>             modelo
+    -csv=<arquivo.csv>     arquivo csv
+    -pdf=<arquivo.pdf>     arquivo pdf
+    -qtd_max_pag=<n>       qtd maxima de paginas por documento
+    -limite=<n>            limite de tarjas
+    -encoding=<xxxx>       encoding do arquivo (se windows geralment é ISO-8859-1)
+    -verbose               incluir essa opção para modo "verbose"
+    -h, -?, -help          mostra esse help
+
 
 Modelos de tarjas aceitos:
 
@@ -53,6 +63,17 @@ Modelos de tarjas aceitos:
     modelo 3: bradesco comp - baseado no modelo 1 (mesmo tamanho TCM)
     modelo 4: bancoob - tarja menor que o TCM
 
+
+
+## Java
+Para gerar um executável <i>jar</i> basta baixar o código fonte e, dentro da pasta do projeto, executar:
+
+    $ bundle
+    $ warble
+
+Com isso, será gerado o arquivo <i>fenix_tarjas.jar</i> que pode ser executado via:
+
+    $ java -jar fenix_tarjas.jar
 
 ## Contributing
 
