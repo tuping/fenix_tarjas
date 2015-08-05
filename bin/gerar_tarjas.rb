@@ -6,7 +6,7 @@
 # incluir v antes do modelo para "verbose"
 require "fenix_tarjas"
 
-puts "Versão #{FenixTarjas::VERSION}"
+puts "gerar_tarjas.rb versão #{FenixTarjas::VERSION}"
 
 if ARGV[0][/(v?)(\d+)/] then
   verbose = ($1.upcase == "V")
