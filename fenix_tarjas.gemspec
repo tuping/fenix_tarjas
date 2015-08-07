@@ -26,4 +26,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "progress_bar"
   spec.add_development_dependency "warbler"
   spec.add_development_dependency "pry"
+  spec.add_development_dependency "rspec", "~> 3.0"
 end

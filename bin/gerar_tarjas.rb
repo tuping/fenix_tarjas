@@ -3,7 +3,7 @@
 require "fenix_tarjas"
 
 HELP = <<ENDHELP
-#{File.basename(__FILE__)}
+#{File.basename($PROGRAM_NAME)}
 Opções:
 
     -m=<0 a 4>             modelo
@@ -28,7 +28,7 @@ encoding = args["encoding"]
 help = args.include?("help") or args.include?("h") or args.include?("?")
 
 if modelo and arquivo_csv and arquivo_pdf and not help then
-  puts "#{File.basename(__FILE__)} versão #{FenixTarjas::VERSION}"
+  puts "#{File.basename($PROGRAM_NAME)} versão #{FenixTarjas::VERSION}"
 
   if verbose then
     puts "#{arquivo_csv} => #{arquivo_pdf} (no máximo #{qtd_max_paginas_por_doc} página(s) por documento)"
@@ -38,7 +38,7 @@ if modelo and arquivo_csv and arquivo_pdf and not help then
 
   FenixTarjas.gerar!(
     verbose,
-    "#{File.dirname(__FILE__)}/../assets/logotipos", #pasta com os logotipos
+    "#{File.dirname($PROGRAM_NAME)}/../assets/logotipos", #pasta com os logotipos
     modelo,
     arquivo_csv,
     arquivo_pdf,
