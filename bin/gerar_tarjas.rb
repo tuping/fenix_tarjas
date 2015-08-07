@@ -3,7 +3,7 @@
 require "fenix_tarjas"
 
 HELP = <<ENDHELP
-#{File.basename($PROGRAM_NAME)}
+#{File.basename($PROGRAM_NAME)} versão #{FenixTarjas::VERSION}
 Opções:
 
     -m=<0 a 4>             modelo
