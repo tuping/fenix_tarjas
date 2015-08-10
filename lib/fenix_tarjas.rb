@@ -14,7 +14,7 @@ module FenixTarjas
       )
       pdf = ArquivoEtiqueta.new({
         :verbose => verbose,
-        :logotipos_path => logotipos_path,
+        :logotipos_path => logotipos_path || "#{File.dirname(__FILE__)}/../assets/logotipos",
         :modelo => modelo,
         :arquivo_csv => arquivo_csv,
         :arquivo_pdf => arquivo_pdf,

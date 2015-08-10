@@ -38,7 +38,7 @@ if modelo and arquivo_csv and arquivo_pdf and not help then
 
   FenixTarjas.gerar!(
     verbose,
-    "#{File.dirname($PROGRAM_NAME)}/../assets/logotipos", #pasta com os logotipos
+    nil, #"#{File.dirname($PROGRAM_NAME)}/../assets/logotipos", #pasta com os logotipos
     modelo,
     arquivo_csv,
     arquivo_pdf,
