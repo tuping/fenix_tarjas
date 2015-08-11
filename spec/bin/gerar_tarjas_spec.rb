@@ -8,7 +8,7 @@ describe "gerar_tarjas" do
     expect(saida).to include("#{FenixTarjas::VERSION}")
   end
 
-  it "deve gerar o pdf corretamente", :focus => true do
+  it "deve gerar o pdf corretamente" do
     hash_pdf_modelo = Digest::MD5.hexdigest(
       File.read("#{FIXTURES_DIR}/teste.pdf")
     )

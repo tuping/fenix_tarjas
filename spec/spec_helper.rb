@@ -9,6 +9,10 @@ require "fenix_tarjas"
 require "pry"
 
 RSpec.configure do |config|
+  #as duas linhas abaixo permitem filtrar os testes usando :focus
+  config.filter_run :focus => true #filtra os testes com :focus, mas...
+  config.run_all_when_everything_filtered = true #...se o filro retorna vazio, roda todos os testes
+
   config.before(:suite) do
     FileUtils.rm_f Dir.glob("#{TEMP_DIR}/*")
   end
