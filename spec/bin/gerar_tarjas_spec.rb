@@ -10,12 +10,12 @@ describe "gerar_tarjas" do
 
   it "deve gerar o pdf corretamente", :focus => true do
     hash_pdf_modelo = Digest::MD5.hexdigest(
-      File.read("#{File.dirname(__FILE__)}/../fixtures/teste.pdf")
+      File.read("#{FIXTURES_DIR}/teste.pdf")
     )
-    comando = "gerar_tarjas.rb -m=1 -csv=#{File.dirname(__FILE__)}/../fixtures/teste.csv -pdf=#{File.dirname(__FILE__)}/../../tmp/teste_gerado.pdf"
+    comando = "gerar_tarjas.rb -m=1 -csv=#{FIXTURES_DIR}/teste.csv -pdf=#{TEMP_DIR}/teste_gerado.pdf"
     saida = %x[#{comando}]
     hash_pdf_gerado = Digest::MD5.hexdigest(
-      File.read("#{File.dirname(__FILE__)}/../../tmp/teste_gerado.pdf")
+      File.read("#{TEMP_DIR}/teste_gerado.pdf")
     )
     expect(hash_pdf_gerado).to eq hash_pdf_modelo
   end
