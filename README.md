@@ -27,6 +27,13 @@ Caso queira converter um arquivo de ISO-8859-1 (Windows) para UTF-8:
 
     iconv -f ISO-8859-1 -t UTF-8 arquivo.csv > arquivo_utf8.csv
 
+Nota sobre valores possíveis para o campo <i>Tipo</i>, supondo "Codigo Febraban" = X.
+- pab: X deve ter 7 dígitos (caso não tenha será completado com zeros a esquerda). Código da agência será impresso a partir de X na forma 0000-000.
+- comp: X deve ter no máximo 4 dígitos e daí o código da agência será impresso na forma 0000. Se X tiver mais que 7 dígitos, a regra de impressão será "default".
+- qualquer outro valor: regra "default". Completa X com zeros a esquerda até 7 dígitos e imprime na forma 0000000.
+
+
+
 ## Instalação
 
 Adicione no Gemfile:
@@ -57,12 +64,11 @@ Opções:
 
 Modelos de tarjas aceitos:
 
-    modelo 0: TCM - simples (sem endereco)
-    modelo 1: TCM - completo (com endereco)
+    modelo 0: TCM 0 - simples (sem endereco)
+    modelo 1: TCM 1 - completo (com endereco)
     modelo 2: santander - tarja menor que o TCM
-    modelo 3: bradesco comp - baseado no modelo 1 (mesmo tamanho TCM)
+    modelo 3: TCM 1 versao 2 (baseado no modelo 1: mesmo tamanho TCM, bradesco comp)
     modelo 4: bancoob - tarja menor que o TCM
-
 
 
 ## Java

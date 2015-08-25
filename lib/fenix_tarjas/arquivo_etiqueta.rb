@@ -29,17 +29,16 @@ require "fenix_tarjas/etiqueta"
 class ArquivoEtiqueta
   def initialize(options)
     @modelo = options[:modelo].to_i #0..4
-    raise "Modelo de etiqueta não reconhecido" if @modelo < 0 or @modelo > 4
     @orientation =
     case @modelo
     when 0..1
       :landscape
     when 2
       :portrait
-    when 3
+    when 3..4
       :landscape
-    when 4
-      :landscape
+    else
+      raise "Modelo de etiqueta não reconhecido"
     end
     @logotipos_path = options[:logotipos_path]
     @arquivo_csv = options[:arquivo_csv]
@@ -118,6 +117,19 @@ class ArquivoEtiqueta
     csv_col_sep.merge(csv_encoding)
   end
 
+  def codigo_agencia(codigo, tipo)
+    codigo_impresso = codigo.to_s.strip.rjust(7,"0") #codigo febraban com 7 digitos
+    if tipo[/\bpab\b/i] then
+      #pab - imprime no formato AAAA-PAB
+      "#{codigo_impresso[0,4]}-#{codigo_impresso[4,3]}"
+    elsif tipo[/\bcomp\b/i] and codigo.to_i <= 9999 then
+      #comp - imprime somente 4 dígitos
+      codigo_impresso[3,4]
+    else
+      codigo_impresso
+    end
+  end
+
   def gerar!
     new_prawn_document!
     if @verbose then
@@ -138,15 +150,17 @@ class ArquivoEtiqueta
           municipio: row[6].strip,
           endereco: row[7].strip,
           malha: row[11].strip,
-          agencia: "#{row[13].strip.rjust(7,"0")} - #{row[4].strip}", #codigo febraban com 7 digitos - nome
+          agencia: "#{codigo_agencia(row[13], row[9])} - #{row[4].strip}", #codigo - nome
           codigo_barras: row[16],
           origem: row[14].strip,
           destino: row[15].strip,
           posicao: i % 4,
-          altura_pagina: @document.bounds.top
+          altura_pagina: @document.bounds.top,
+          polo: row[17].strip,
+          tipo: row[9]
         }
         #bradesco comp
-        options.merge!({polo: row[17].strip}) if @modelo == 3
+        #options.merge!({polo: row[17].strip}) if (3..4).include? @modelo
 
         etiqueta = Etiqueta.new(options)
         if i > 0 and etiqueta.posicao == 0 then
