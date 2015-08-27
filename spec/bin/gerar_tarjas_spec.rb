@@ -14,7 +14,6 @@ describe "gerar_tarjas" do
     )
     comando = "gerar_tarjas.rb -m=1 -csv=#{FIXTURES_DIR}/teste.csv -pdf=#{TEMP_DIR}/teste_gerado.pdf"
     saida = %x[#{comando}]
-    puts saida
     hash_pdf_gerado = Digest::MD5.hexdigest(
       File.read("#{TEMP_DIR}/teste_gerado.pdf")
     )

@@ -155,6 +155,14 @@ class ArquivoEtiqueta
     @bar.increment
   end
 
+  def tamanho_barra(csv_size)
+    if @limite_tarjas and @limite_tarjas > 0
+      [@limite_tarjas, csv_size].min
+    else
+      csv_size
+    end
+  end
+
   def gerar!
     new_prawn_document!
     if @verbose then
@@ -165,7 +173,7 @@ class ArquivoEtiqueta
     pagina = 1
     csv = CSV.open(@arquivo_csv, csv_options).to_a[1..-1]
     @bar = ProgressBar.create(
-      total: [csv.size, @limite_tarjas].min,
+      total: tamanho_barra(csv.size),
       format: formato_barra,
       progress_mark: ' ',
       remainder_mark: '.'
