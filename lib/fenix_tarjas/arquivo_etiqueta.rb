@@ -165,7 +165,7 @@ class ArquivoEtiqueta
     pagina = 1
     csv = CSV.open(@arquivo_csv, csv_options).to_a[1..-1]
     @bar = ProgressBar.create(
-      total: csv.size,
+      total: [csv.size, @limite_tarjas].min,
       format: formato_barra,
       progress_mark: ' ',
       remainder_mark: '.'
@@ -206,8 +206,8 @@ class ArquivoEtiqueta
           end
         end
         etiqueta.draw_on(@document)
+        incrementar_barra
       end
-      incrementar_barra
     end
     @document.render_file nome_arquivo_pdf
   end
