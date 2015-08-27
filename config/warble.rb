@@ -8,7 +8,7 @@ Warbler::Config.new do |config|
   # - gemjar: package the gem repository in a jar file in WEB-INF/lib
   # - executable: embed a web server and make the war executable
   # - compiled: compile .rb files to .class files
-  # config.features = %w(gemjar)
+  config.features = %w(gemjar compiled)
 
   # Application directories to be included in the webapp.
   # config.dirs = %w(app config db lib log script vendor tmp)
@@ -23,7 +23,7 @@ Warbler::Config.new do |config|
   # in lib (and not otherwise excluded) then they need not be mentioned here.
   # JRuby and JRuby-Rack are pre-loaded in this list.  Be sure to include your
   # own versions if you directly set the value
-  #config.java_libs += FileList["lib/java/*.jar"]
+  # config.java_libs += FileList["lib/java/*.jar"]
 
   # Loose Java classes and miscellaneous files to be included.
   # config.java_classes = FileList["target/classes/**.*"]
@@ -71,7 +71,7 @@ Warbler::Config.new do |config|
   # Array of regular expressions matching relative paths in gems to be
   # excluded from the war. Defaults to empty, but you can set it like
   # below, which excludes test files.
-  config.gem_excludes = [/^(test|spec)\//] #aqui
+  config.gem_excludes = [/^(test|spec)\//]
 
   # Pathmaps for controlling how application files are copied into the archive
   # config.pathmaps.application = ["WEB-INF/%p"]
@@ -93,11 +93,11 @@ Warbler::Config.new do |config|
   # When using the 'compiled' feature and specified, only these Ruby
   # files will be compiled. Default is to compile all \.rb files in
   # the application.
-  #config.compiled_ruby_files = FileList['app/**/*.rb']
+  # config.compiled_ruby_files = FileList['app/**/*.rb']
 
   # Determines if ruby files in supporting gems will be compiled.
   # Ignored unless compile feature is used.
-  config.compile_gems = true #aqui
+  config.compile_gems = true
 
   # When set it specify the bytecode version for compiled class files
   # config.bytecode_version = "1.6"
@@ -105,7 +105,7 @@ Warbler::Config.new do |config|
   # When set to true, Warbler will override the value of ENV['GEM_HOME'] even it
   # has already been set. When set to false it will use any existing value of
   # GEM_HOME if it is set.
-  # config.override_gem_home = true
+  config.override_gem_home = true
 
   # Allows for specifing custom executables
   # config.executable = ["rake", "bin/rake"]
