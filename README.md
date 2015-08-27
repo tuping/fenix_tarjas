@@ -75,7 +75,7 @@ Modelos de tarjas aceitos:
 Para gerar um executável <i>jar</i> basta baixar o código fonte e, dentro da pasta do projeto, executar:
 
     $ bundle
-    $ warble
+    $ bundle exec warble compiled jar
 
 Com isso, será gerado o arquivo <i>fenix_tarjas.jar</i> que pode ser executado via:
 

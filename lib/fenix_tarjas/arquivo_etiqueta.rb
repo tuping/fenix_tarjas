@@ -147,7 +147,7 @@ class ArquivoEtiqueta
   end
 
   def formato_barra
-    "|%b#{marcador_barra}%i| %p%% (%c / %C) %a %E"
+    "|%b#{marcador_barra}%i| %p%% (%c / %C) %a %E %R/s"
   end
 
   def incrementar_barra
