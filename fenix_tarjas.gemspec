@@ -23,8 +23,9 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "prawn", "~> 1.3.0"
   spec.add_runtime_dependency "barby"
   spec.add_runtime_dependency "rqrcode"
-  spec.add_runtime_dependency "progress_bar"
+  spec.add_runtime_dependency "ruby-progressbar"
   spec.add_development_dependency "warbler"
   spec.add_development_dependency "pry"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "ttfunk"
 end

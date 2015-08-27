@@ -23,7 +23,7 @@ R [17] Polo ** somente bradesco comp
 
 require "prawn"
 require "csv"
-require "progress_bar"
+require "ruby-progressbar"
 require "fenix_tarjas/etiqueta"
 
 class ArquivoEtiqueta
@@ -130,6 +130,31 @@ class ArquivoEtiqueta
     end
   end
 
+  def marcador_barra
+    ret = case @marcador_barra
+    when 1
+      "\\"
+    when 2
+      "|"
+    when 3
+      "/"
+    else
+      @marcador_barra = 0
+      "-"
+    end
+    @marcador_barra = @marcador_barra + 1
+    ret
+  end
+
+  def formato_barra
+    "|%b#{marcador_barra}%i| %p%% (%c / %C) %a %E"
+  end
+
+  def incrementar_barra
+    @bar.format formato_barra
+    @bar.increment
+  end
+
   def gerar!
     new_prawn_document!
     if @verbose then
@@ -139,7 +164,12 @@ class ArquivoEtiqueta
     end
     pagina = 1
     csv = CSV.open(@arquivo_csv, csv_options).to_a[1..-1]
-    bar = ProgressBar.new csv.size
+    @bar = ProgressBar.create(
+      total: csv.size,
+      format: formato_barra,
+      progress_mark: ' ',
+      remainder_mark: '.'
+    )
     csv.each_with_index do |row, i|
       if @limite_tarjas <= 0 or i < @limite_tarjas
         options = {
@@ -176,8 +206,8 @@ class ArquivoEtiqueta
           end
         end
         etiqueta.draw_on(@document)
-        bar.increment!
       end
+      incrementar_barra
     end
     @document.render_file nome_arquivo_pdf
   end
