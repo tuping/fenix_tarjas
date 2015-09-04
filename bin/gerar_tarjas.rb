@@ -11,7 +11,7 @@ Opções:
     -pdf=<arquivo.pdf>     arquivo pdf
     -qtd_max_pag=<n>       qtd maxima de paginas por documento
     -limite=<n>            limite de tarjas
-    -encoding=<xxxx>       encoding do arquivo (se windows geralment é ISO-8859-1)
+    -encoding=<xxxx>       encoding do arquivo (se windows geralmente é ISO-8859-1)
     -verbose               incluir essa opção para modo "verbose"
     -h, -?, -help          mostra esse help
 

@@ -1,5 +1,5 @@
 #encoding: utf-8
-TEMP_DIR = "#{File.dirname(__FILE__)}/../tmp/"
+TEMP_DIR = "#{File.dirname(__FILE__)}/../tmp"
 FIXTURES_DIR = "#{File.dirname(__FILE__)}/fixtures"
 
 require "bundler/setup" # Necessário para não carregar a versão da
@@ -14,7 +14,10 @@ RSpec.configure do |config|
   config.run_all_when_everything_filtered = true #...se o filro retorna vazio, roda todos os testes
 
   config.before(:suite) do
-    FileUtils.rm_f Dir.glob("#{TEMP_DIR}/*")
+    begin
+      FileUtils.rm_f Dir.glob("#{TEMP_DIR}/*")
+    rescue
+    end
   end
 
   config.after(:suite) do

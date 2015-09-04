@@ -194,7 +194,7 @@ class ArquivoEtiqueta
           destino: row[15].strip,
           posicao: i % 4,
           altura_pagina: @document.bounds.top,
-          polo: row[17].strip,
+          polo: row[17].nil? ? "" : row[17].strip,
           tipo: row[9]
         }
         #bradesco comp
