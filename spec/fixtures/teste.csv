@@ -1,28 +1,16 @@
-"Lote";"Cliente Contrato";"Codigo Banco";"Codigo Agencia";"Nome";"Estado";"Municipio";"Endereco";"CEP";"Tipo";"Horario";"Malha";"Refazer";"Codigo Febraban";"Origem";"Destino";"Tarjas 1";"POLOS"
-1;"Teste";"237";"XXXX1";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX1";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-2;"Teste";"001";"XXXX2";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX2";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-3;"Teste";"033";"XXXX3";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX3";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-4;"Teste";"341";"XXXX4";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX4";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-5;"Teste";"104";"XXXX5";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX5";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-6;"Teste";"021";"XXXX6";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX6";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-7;"Teste";"389";"XXXX7";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX7";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-8;"Teste";"399";"XXXX8";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX8";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-9;"Teste";"756";"XXXX9";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX9";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-10;"Teste";"237";"XXXX10";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX10";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-11;"Teste";"001";"XXXX11";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX11";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-12;"Teste";"033";"XXXX12";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX12";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-13;"Teste";"341";"XXXX13";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX13";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-14;"Teste";"104";"XXXX14";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX14";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-15;"Teste";"021";"XXXX15";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX15";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-16;"Teste";"389";"XXXX16";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX16";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-17;"Teste";"399";"XXXX17";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX17";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-18;"Teste";"756";"XXXX18";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX18";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-19;"Teste";"237";"XXXX19";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX19";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-20;"Teste";"001";"XXXX20";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX20";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-21;"Teste";"033";"XXXX21";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX21";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-22;"Teste";"341";"XXXX22";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX22";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-23;"Teste";"104";"XXXX23";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX23";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-24;"Teste";"021";"XXXX24";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX24";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-25;"Teste";"389";"XXXX25";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX25";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-26;"Teste";"399";"XXXX26";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX26";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
-27;"Teste";"756";"XXXX27";"Agência XXXX";"SP";"São Paulo";"Rua dos Bobos, número 0";"918718-922";"AGÊNCIA";"08:00";"Malha teste";;"XXXX27";"Origem 1";"Destino 1";"TARJADETESTE00001";"POLO 1"
+Lote;Cliente Contrato;Codigo Banco;Codigo Agencia;Nome;Estado;Municipio;Endereco;CEP;Tipo;Horario;Malha;Refazer;Codigo Febraban;Origem;Destino;Tarjas
+7;JADLOG FEBRABAN LOTE 07;21;0000101;GLORIA;ES;VILA VELHA;Rua Santa Terezinha , 482 - Gloria;29176-090;COMP;8:50;VITORIA URB 2;;0000101;JAD LOGISTICA;EXPEDI��O BANESTES ES;00210000101010000000
+7;JADLOG FEBRABAN LOTE 07;21;0000055;NOVA ALMEIDA;ES;SERRA;Avenida Capit�o Bley, SN - Nova Almeida;29160-000;COMP;9:15;VITORIA 2;;0000055;JAD LOGISTICA;EXPEDI��O BANESTES ES;00210000055010000000
+7;JADLOG FEBRABAN LOTE 07;21;0000222;BARRA DO RIACHO;ES;ARACRUZ;Rua Franklin Cordeiro, 100 - Salas 03 e 04;29197-655;COMP;10:00;VITORIA 2;;0000222;JAD LOGISTICA;EXPEDI��O BANESTES ES;00210000222010000000
+7;JADLOG FEBRABAN LOTE 07;21;0000101;GLORIA;ES;VILA VELHA;Rua Santa Terezinha , 482 - Gloria;29176-090;COMP;8:50;VITORIA URB 2;;0000101;JAD LOGISTICA;EXPEDI��O BANESTES ES;00210000101020000000
+7;JADLOG FEBRABAN LOTE 07;21;0000055;NOVA ALMEIDA;ES;SERRA;Avenida Capit�o Bley, SN - Nova Almeida;29160-000;COMP;9:15;VITORIA 2;;0000055;JAD LOGISTICA;EXPEDI��O BANESTES ES;00210000055020000000
+7;JADLOG FEBRABAN LOTE 07;21;0000222;BARRA DO RIACHO;ES;ARACRUZ;Rua Franklin Cordeiro, 100 - Salas 03 e 04;29197-655;COMP;10:00;VITORIA 2;;0000222;JAD LOGISTICA;EXPEDI��O BANESTES ES;00210000222020000000
+7;JADLOG FEBRABAN LOTE 07;21;0000101;GLORIA;ES;VILA VELHA;Rua Santa Terezinha , 482 - Gloria;29176-090;COMP;8:50;VITORIA URB 2;;0000101;JAD LOGISTICA;EXPEDI��O BANESTES ES;00210000101030000000
+7;JADLOG FEBRABAN LOTE 07;21;0000055;NOVA ALMEIDA;ES;SERRA;Avenida Capit�o Bley, SN - Nova Almeida;29160-000;COMP;9:15;VITORIA 2;;0000055;JAD LOGISTICA;EXPEDI��O BANESTES ES;00210000055030000000
+7;JADLOG FEBRABAN LOTE 07;21;0000222;BARRA DO RIACHO;ES;ARACRUZ;Rua Franklin Cordeiro, 100 - Salas 03 e 04;29197-655;COMP;10:00;VITORIA 2;;0000222;JAD LOGISTICA;EXPEDI��O BANESTES ES;00210000222030000000
+7;JADLOG FEBRABAN LOTE 07;21;0000101;GLORIA;ES;VILA VELHA;Rua Santa Terezinha , 482 - Gloria;29176-090;COMP;8:50;VITORIA URB 2;;0000101;JAD LOGISTICA;EXPEDI��O BANESTES ES;00210000101040000000
+7;JADLOG FEBRABAN LOTE 07;21;0000055;NOVA ALMEIDA;ES;SERRA;Avenida Capit�o Bley, SN - Nova Almeida;29160-000;COMP;9:15;VITORIA 2;;0000055;JAD LOGISTICA;EXPEDI��O BANESTES ES;00210000055040000000
+7;JADLOG FEBRABAN LOTE 07;21;0000222;BARRA DO RIACHO;ES;ARACRUZ;Rua Franklin Cordeiro, 100 - Salas 03 e 04;29197-655;COMP;10:00;VITORIA 2;;0000222;JAD LOGISTICA;EXPEDI��O BANESTES ES;00210000222040000000
+7;JADLOG FEBRABAN LOTE 07;21;0000101;GLORIA;ES;VILA VELHA;Rua Santa Terezinha , 482 - Gloria;29176-090;COMP;8:50;VITORIA URB 2;;0000101;JAD LOGISTICA;EXPEDI��O BANESTES ES;00210000101050000000
+7;JADLOG FEBRABAN LOTE 07;21;0000055;NOVA ALMEIDA;ES;SERRA;Avenida Capit�o Bley, SN - Nova Almeida;29160-000;COMP;9:15;VITORIA 2;;0000055;JAD LOGISTICA;EXPEDI��O BANESTES ES;00210000055050000000
+7;JADLOG FEBRABAN LOTE 07;21;0000222;BARRA DO RIACHO;ES;ARACRUZ;Rua Franklin Cordeiro, 100 - Salas 03 e 04;29197-655;COMP;10:00;VITORIA 2;;0000222;JAD LOGISTICA;EXPEDI��O BANESTES ES;00210000222050000000

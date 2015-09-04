@@ -310,8 +310,10 @@ class Etiqueta
       :width => x_size-(gap*2),
       :height => y_size-(gap*2)
     ) do
-      page.float do
-        page.text "<font size='16'><b>#{@polo}</b></font>", :align => :right, :inline_format => true
+      if @polo then
+        page.float do
+          page.text "<font size='16'><b>#{@polo}</b></font>", :align => :right, :inline_format => true
+        end
       end
       page.image @logotipo, :fit => [200,30]
 
