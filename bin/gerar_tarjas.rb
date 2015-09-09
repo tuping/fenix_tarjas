@@ -6,7 +6,7 @@ HELP = <<ENDHELP
 #{File.basename($PROGRAM_NAME)} versão #{FenixTarjas::VERSION}
 Opções:
 
-    -m=<0 a 4>             modelo
+    -m=<0 a 5>             modelo
     -csv=<arquivo.csv>     arquivo csv
     -pdf=<arquivo.pdf>     arquivo pdf
     -qtd_max_pag=<n>       qtd maxima de paginas por documento

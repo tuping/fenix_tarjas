@@ -28,14 +28,14 @@ require "fenix_tarjas/etiqueta"
 
 class ArquivoEtiqueta
   def initialize(options)
-    @modelo = options[:modelo].to_i #0..4
+    @modelo = options[:modelo].to_i #0..5
     @orientation =
     case @modelo
     when 0..1
       :landscape
     when 2
       :portrait
-    when 3..4
+    when 3..5
       :landscape
     else
       raise "Modelo de etiqueta não reconhecido"

@@ -11,8 +11,9 @@ class Etiqueta
     #modelo 2: santander - tarja menor
     #modelo 3: bradesco comp (baseado no modelo 1 = tamanho)
     #modelo 4: bancoob
+    #modelo 5: tamanho menor (mod 4), formatação modelo bradesco comp (3) = bancoob comp
     @modelo = options[:modelo] || 0 #0..4
-    raise "Modelo de etiqueta não reconhecido" if @modelo < 0 or @modelo > 4
+    raise "Modelo de etiqueta não reconhecido" if @modelo < 0 or @modelo > 5
     @logotipo = options[:logotipo]
     @banco = options[:banco].strip
     @malha = options[:malha].strip
@@ -45,7 +46,7 @@ class Etiqueta
       235 #8cm
     when 3
       411 #14cm
-    when 4
+    when 4..5
       382 #13cm
     end
   end
@@ -59,7 +60,7 @@ class Etiqueta
       280 #9,5cm
     when 3
       250.5 #8,5cm
-    when 4
+    when 4..5
       264.5 #9,0cm
     end
   end
@@ -80,11 +81,7 @@ class Etiqueta
       15
     when 2
       7
-    when 3
-      15
-    when 3
-      15
-    when 4
+    when 3..5
       15
     end
   end
@@ -110,6 +107,8 @@ class Etiqueta
         draw_etiqueta_bradesco_comp_on(page)
       when 4
         draw_etiqueta_bancoob_on(page)
+      when 5
+        draw_etiqueta_bancoob_comp_on(page)
       end
       page.stroke_bounds
     end
@@ -449,4 +448,148 @@ class Etiqueta
     end
   end
 
+  def draw_etiqueta_bancoob_comp_on(page)
+    page.bounding_box(
+      [gap,page.bounds.top-gap],
+      :width => x_size-(gap*2),
+      :height => y_size-(gap*2)
+    ) do
+      if @polo then
+        page.float do
+          page.text "<font size='16'><b>#{@polo}</b></font>", :align => :right, :inline_format => true
+        end
+      end
+      page.image @logotipo, :fit => [200,30]
+
+      #qrcode
+      tamanho_qr_code = 100
+      page.float do
+        page.bounding_box(
+          [330,page.bounds.bottom+2*gap],
+          :width => 100,
+          :height => 30
+        ) do
+          @qrcode.annotate_pdf(page, :ydim => 1.5, :xdim => 1.5, :margin => 0)
+        end
+      end
+
+      page.move_down gap-2
+      page.text "Malha: #{@malha}", :align => :center
+      page.move_down 5
+      page.text "<font size='16'><b>#{@agencia}</b></font>", :align => :center, :inline_format => true
+
+      #codigo de barras
+      page.bounding_box(
+        [65,127],
+        :width => x_size-65,
+        :height => 30
+      ) do
+        @barcode.annotate_pdf(page, :height => 30, :xdim => 1)
+      end
+
+      page.move_down 5
+      page.text @codigo_barras, :align => :center
+
+      #endereco
+      page.bounding_box(
+        [0,70],
+        :width => x_size-(gap*2),
+        :height => 30
+      ) do
+        page.text "<font size='9'>#{@endereco}</font>", :align => :center, :inline_format => true
+      end
+      #cidade, estado
+      page.bounding_box(
+        [0,45],
+        :width => x_size-(gap*2),
+        :height => 30
+      ) do
+        page.text "<font size='9'>#{@municipio} - #{@estado}</font>", :align => :center, :inline_format => true
+      end
+      #origem - destino
+      page.bounding_box(
+        [0,20],
+        :width => x_size-(gap*2), #x_size-tamanho_qr_code-10
+        :height => 30
+      ) do
+        page.text "<font size='9'>#{@origem} <b>x</b> #{@destino}</font>", :align => :center, :inline_format => true
+      end
+
+      if @obs then
+        page.move_down 10
+        page.text @obs, :align => :center
+      end
+      #page.stroke_bounds
+    end
+  end
+
+  def draw_etiqueta_bancoob_on(page)
+    page.bounding_box(
+      [gap,page.bounds.top-gap],
+      :width => x_size-(gap*2),
+      :height => y_size-(gap*2)
+    ) do
+      page.image @logotipo, :fit => [200,30]
+
+      page.move_down gap
+      page.text "Malha: #{@malha}", :align => :center
+      page.move_down 5
+      page.text "<font size='14'><b>#{@agencia}</b></font>", :align => :center, :inline_format => true
+
+      #codigo de barras
+      page.bounding_box(
+        [50,127],
+        :width => x_size-50,
+        :height => 30
+      ) do
+        @barcode.annotate_pdf(page, :height => 30, :xdim => 1)
+      end
+
+      page.move_down 5
+      page.text @codigo_barras, :align => :center
+
+      tamanho_qr_code = 100
+      page.float do
+        #endereco
+        page.bounding_box(
+          [gap*2,70],
+          :width => x_size-tamanho_qr_code-10,
+          :height => 30
+        ) do
+          page.text "<font size='9'>#{@endereco}</font>", :align => :center, :inline_format => true
+        end
+        #endereco
+        page.bounding_box(
+          [gap*2,45],
+          :width => x_size-tamanho_qr_code-10,
+          :height => 30
+        ) do
+          page.text "<font size='9'>#{@municipio} - #{@estado}</font>", :align => :center, :inline_format => true
+        end
+        page.bounding_box(
+          [gap*2,20],
+          :width => x_size-tamanho_qr_code-10,
+          :height => 30
+        ) do
+          page.text "<font size='9'>#{@origem} x #{@destino}</font>", :align => :center, :inline_format => true
+        end
+
+        if @obs then
+          page.move_down 10
+          page.text @obs, :align => :center
+        end
+      end
+      #qrcode
+      page.float do
+        page.bounding_box(
+          [x_size-tamanho_qr_code,70],
+          :width => 100,
+          :height => 30
+        ) do
+          @qrcode.annotate_pdf(page, :ydim => 1.5, :xdim => 1.5, :margin => 0)
+        end
+      end
+      #page.stroke_bounds
+    end
+  end
 end

@@ -15,12 +15,12 @@ RSpec.configure do |config|
 
   config.before(:suite) do
     begin
-      FileUtils.rm_f Dir.glob("#{TEMP_DIR}/*")
+      #FileUtils.rm_f Dir.glob("#{TEMP_DIR}/*")
     rescue
     end
   end
 
   config.after(:suite) do
-    FileUtils.rm_f Dir.glob("#{TEMP_DIR}/*")
+    #FileUtils.rm_f Dir.glob("#{TEMP_DIR}/*")
   end
 end
