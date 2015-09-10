@@ -66,12 +66,22 @@ class Etiqueta
   end
 
   def coordinates
-    @coordinates ||= [
-      [0,@altura_pagina-(@altura_pagina/2-y_size)],
-      [x_size+2,@altura_pagina-(@altura_pagina/2-y_size)],
-      [0,@altura_pagina-(@altura_pagina/2-y_size)-y_size-2],
-      [x_size+2,@altura_pagina-(@altura_pagina/2-y_size)-y_size-2]
-    ]
+    case @modelo
+    when 5 #mais 1cm de distancia entre as tarjas
+      @coordinates ||= [
+        [0,@altura_pagina-(@altura_pagina/2-y_size)],
+        [x_size+32,@altura_pagina-(@altura_pagina/2-y_size)],
+        [0,@altura_pagina-(@altura_pagina/2-y_size)-y_size-32],
+        [x_size+32,@altura_pagina-(@altura_pagina/2-y_size)-y_size-32]
+      ]
+    else
+      @coordinates ||= [
+        [0,@altura_pagina-(@altura_pagina/2-y_size)],
+        [x_size+2,@altura_pagina-(@altura_pagina/2-y_size)],
+        [0,@altura_pagina-(@altura_pagina/2-y_size)-y_size-2],
+        [x_size+2,@altura_pagina-(@altura_pagina/2-y_size)-y_size-2]
+      ]
+    end
   end
 
   def gap
@@ -456,7 +466,7 @@ class Etiqueta
     ) do
       if @polo then
         page.float do
-          page.text "<font size='16'><b>#{@polo}</b></font>", :align => :right, :inline_format => true
+          page.text "<font size='15'><b>#{@polo}</b></font>", :align => :right, :inline_format => true
         end
       end
       page.image @logotipo, :fit => [200,30]
@@ -465,7 +475,7 @@ class Etiqueta
       tamanho_qr_code = 100
       page.float do
         page.bounding_box(
-          [330,page.bounds.bottom+2*gap],
+          [310,page.bounds.bottom+2*gap],
           :width => 100,
           :height => 30
         ) do
@@ -476,11 +486,11 @@ class Etiqueta
       page.move_down gap-2
       page.text "Malha: #{@malha}", :align => :center
       page.move_down 5
-      page.text "<font size='16'><b>#{@agencia}</b></font>", :align => :center, :inline_format => true
+      page.text "<font size='15'><b>#{@agencia}</b></font>", :align => :center, :inline_format => true
 
       #codigo de barras
       page.bounding_box(
-        [65,127],
+        [50,127],
         :width => x_size-65,
         :height => 30
       ) do

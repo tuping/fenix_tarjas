@@ -69,6 +69,7 @@ Modelos de tarjas aceitos:
     modelo 2: santander - tarja menor que o TCM
     modelo 3: TCM 1 versao 2 (baseado no modelo 1: mesmo tamanho TCM, bradesco comp)
     modelo 4: bancoob - tarja menor que o TCM
+    modelo 5: bancoob comp - tamanho menor (=4), formatação comp (=3)
 
 
 ## Java

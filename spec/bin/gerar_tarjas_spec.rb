@@ -12,7 +12,7 @@ describe "gerar_tarjas" do
   it "deve gerar o pdf corretamente, sem erros" do
     hash_pdf_modelo = [
       Digest::MD5.hexdigest(File.read("#{FIXTURES_DIR}/teste.pdf")),
-      "dfdf17919bd64506de478c76836b46e5" #Jruby
+      "3ad21992b345e9ef96e423366f2216fa" #Jruby
     ]
     comando = "gerar_tarjas.rb -m=1 -csv=#{FIXTURES_DIR}/teste.csv -pdf=#{TEMP_DIR}/teste_gerado.pdf -encoding=iso-8859-1"
     stdin, stdout, stderr = Open3.popen3(comando)
@@ -32,7 +32,7 @@ describe "gerar_tarjas" do
   it "deve gerar o pdf com polos corretamente, sem erros" do
     hash_pdf_modelo = [
       Digest::MD5.hexdigest(File.read("#{FIXTURES_DIR}/teste_polo.pdf")),
-      "dfdf17919bd64506de478c76836b46e5"
+      "bec8e33eb60627b1f16a70fcd1930e75" #Jruby
     ]
     comando = "gerar_tarjas.rb -m=5 -csv=#{FIXTURES_DIR}/teste_polo.csv -pdf=#{TEMP_DIR}/teste_polo_gerado.pdf"
     stdin, stdout, stderr = Open3.popen3(comando)
