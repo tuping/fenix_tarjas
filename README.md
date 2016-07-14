@@ -3,7 +3,7 @@
 Gera um ou mais arquivos PDF para impressão das tarjas a partir de um arquivo CSV.
 
 Formato do CSV:
-- UTF-8
+- UTF-8 (se outro vide opções mais abaixo)
 - Delimitador de campo: ;
 - Delimitador de texto: "
 
