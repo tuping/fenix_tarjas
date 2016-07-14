@@ -2,6 +2,12 @@
 
 Gera um ou mais arquivos PDF para impressão das tarjas a partir de um arquivo CSV.
 
+Formato do CSV:
+- UTF-8
+- Delimitador de campo: ;
+- Delimitador de texto: "
+
+
 Colunas esperadas no arquivo CSV (campos com * são obrigatórios):
 
     A [00] Lote
