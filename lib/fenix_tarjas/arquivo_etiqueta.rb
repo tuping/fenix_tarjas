@@ -65,7 +65,8 @@ class ArquivoEtiqueta
       341 => "#{@logotipos_path}/itau.jpg",
       389 => "#{@logotipos_path}/mercantil_do_brasil.jpg",
       399 => "#{@logotipos_path}/hsbc.png",
-      756 => "#{@logotipos_path}/bancoob.png"
+      756 => "#{@logotipos_path}/bancoob.png",
+       47 => "#{@logotipos_path}/banese.png"
     }
   end
 
