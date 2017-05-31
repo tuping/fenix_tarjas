@@ -147,7 +147,7 @@ class Etiqueta
       end
 
       #page.move_up gap * 0.5
-      page.text "Malha: #{@malha}", :align => :center
+      page.text @malha.to_s, :align => :center
       page.move_down 5
       page.text "<font size='11'><b>#{@agencia}</b></font>", :align => :center, :inline_format => true
       page.move_down 3
@@ -200,7 +200,7 @@ class Etiqueta
       end
 
       #page.move_up gap * 0.5
-      page.text "Malha: #{@malha}", :align => :center
+      page.text @malha.to_s, :align => :center
       page.move_down 5
       page.text "<font size='14'><b>#{@agencia}</b></font>", :align => :center, :inline_format => true
 
@@ -257,7 +257,7 @@ class Etiqueta
       page.image @logotipo, :fit => [200,30]
 
       page.move_down 3
-      page.text "<font size='8'>Malha: #{@malha}</font>", :align => :center, :inline_format => true
+      page.text "<font size='8'>#{@malha}</font>", :align => :center, :inline_format => true
       page.move_down 10
       page.text "<font size='12'><b>#{@agencia}</b></font>", :align => :center, :inline_format => true
 
@@ -339,7 +339,7 @@ class Etiqueta
       end
 
       page.move_down gap-2
-      page.text "Malha: #{@malha}", :align => :center
+      page.text @malha.to_s, :align => :center
       page.move_down 5
       page.text "<font size='16'><b>#{@agencia}</b></font>", :align => :center, :inline_format => true
 
@@ -397,7 +397,7 @@ class Etiqueta
       page.image @logotipo, :fit => [200,30]
 
       page.move_down gap
-      page.text "Malha: #{@malha}", :align => :center
+      page.text @malha.to_s, :align => :center
       page.move_down 5
       page.text "<font size='14'><b>#{@agencia}</b></font>", :align => :center, :inline_format => true
 
@@ -484,7 +484,7 @@ class Etiqueta
       end
 
       page.move_down gap-2
-      page.text "Malha: #{@malha}", :align => :center
+      page.text @malha.to_s, :align => :center
       page.move_down 5
       page.text "<font size='15'><b>#{@agencia}</b></font>", :align => :center, :inline_format => true
 
@@ -542,7 +542,7 @@ class Etiqueta
       page.image @logotipo, :fit => [200,30]
 
       page.move_down gap
-      page.text "Malha: #{@malha}", :align => :center
+      page.text @malha.to_s, :align => :center
       page.move_down 5
       page.text "<font size='14'><b>#{@agencia}</b></font>", :align => :center, :inline_format => true
 
