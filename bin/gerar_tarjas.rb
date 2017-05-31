@@ -27,6 +27,9 @@ limite_de_tarjas = args["limite"]
 encoding = args["encoding"]
 help = args.include?("help") or args.include?("h") or args.include?("?")
 
+puts "CLASSPATH=#{$CLASSPATH}" if verbose
+puts "$:=#{$:}" if verbose
+
 if modelo and arquivo_csv and arquivo_pdf and not help then
   puts "#{File.basename($PROGRAM_NAME)} versão #{FenixTarjas::VERSION}"
 
